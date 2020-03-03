@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    name: mysql
+#    url: jdbc:mysql://localhost:3306/2019ncov?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&autoReconnect=true
+#    driverClassName: com.mysql.jdbc.Driver
+#    username: root
+#    password: 123456
+    url: jdbc:mysql://rm-uf66ovberrxv0356wwo.mysql.rds.aliyuncs.com/rse_porduct_dev?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&autoReconnect=true
+    driverClassName: com.mysql.jdbc.Driver
+    username: rse_dev
+    password: 8TAll_LL
+    druid:
+      initial-size: 4
+      max-active: 16
+      min-idle: 4
+      max-wait: 2000
+      test-while-idle: true
+      test-on-borrow: true
+      test-on-return: true
+      keep-alive: true
+      validation-query: select 1
+      transaction-query-timeout: 60000
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true
+          slow-sql-millis: 2000
+        wall:
+          enabled: true
+          config:
+            drop-table-allow: false
+            alter-table-allow: false
+            rename-table-allow: false
+        slf4j:
+          enabled: true
+          connection-log-enabled: true
+          statement-log-enabled: true
+          result-set-log-enabled: true
